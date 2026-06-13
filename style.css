@@ -17,6 +17,7 @@ body{
 }
 
 
+/* ── NAVBAR ── */
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -48,6 +49,8 @@ body{
     margin-top:5px;
 }
 
+
+/* ── DASHBOARD GRID ── */
 .dashboard{
     display:grid;
     grid-template-columns:280px 1fr 360px;
@@ -66,6 +69,8 @@ body{
     display:flex;
 }
 
+
+/* ── CARDS ── */
 .card{
     background:#0d1327;
     border:1px solid rgba(168,85,247,.15);
@@ -84,6 +89,8 @@ body{
     font-size:2rem;
 }
 
+
+/* ── LEARNER STATE ── */
 .metric{
     display:flex;
     justify-content:space-between;
@@ -106,11 +113,7 @@ body{
 .progress-fill{
     width:78%;
     height:100%;
-    background:linear-gradient(
-        90deg,
-        #9333ea,
-        #c084fc
-    );
+    background:linear-gradient(90deg,#9333ea,#c084fc);
 }
 
 .motivation-card{
@@ -122,6 +125,8 @@ body{
     line-height:1.8;
 }
 
+
+/* ── EVENT STREAM ── */
 .events{
     display:flex;
     flex-direction:column;
@@ -135,25 +140,18 @@ body{
     border-radius:12px;
 }
 
+
+/* ── WEBCAM ── */
 .webcam-output{
     width:100%;
     height:420px;
-
-    background:linear-gradient(
-        135deg,
-        #0d1730,
-        #111d42
-    );
-
+    background:linear-gradient(135deg,#0d1730,#111d42);
     border:2px dashed rgba(168,85,247,.5);
     border-radius:16px;
-
     position:relative;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     overflow:hidden;
 }
 
@@ -169,27 +167,18 @@ body{
 
 .face-box{
     position:absolute;
-
-    width: 250px;;
-    height: 250px;
-
+    width:250px;
+    height:250px;
     border:4px solid #a855f7;
-
     border-radius:12px;
-
     top:50%;
     left:50%;
-
     transform:translate(-50%,-50%);
-
-    box-shadow:
-    0 0 15px #a855f7,
-    0 0 30px #9333ea;
+    box-shadow:0 0 15px #a855f7, 0 0 30px #9333ea;
 }
 
 .camera-status{
     margin-top:15px;
-
     display:flex;
     justify-content:space-between;
 }
@@ -198,31 +187,32 @@ body{
     color:#22c55e;
 }
 
+
+/* ── TOPIC CARD ── */
 .topic-card{
     min-height:360px;
     position:relative;
+    overflow:hidden;          /* keeps brain emoji from spilling out */
 }
 
 .topic-card h3{
-    font-size:2.3rem;
+    font-size:2rem;           /* slightly smaller so title never wraps into the brain */
     color:#c084fc;
-    margin-bottom:25px;
+    margin-bottom:20px;
+    width:60%;                /* constrains title away from brain on large screens */
 }
 
-.topic-card p{
+.topic-card > p{
     width:55%;
     line-height:1.8;
 }
 
 .topic-grid{
-    margin-top:35px;
-
-    width:60%;
-
+    margin-top:30px;
+    width:58%;
     display:grid;
     grid-template-columns:1fr 1fr;
-
-    gap:40px;
+    gap:30px;
 }
 
 .topic-grid ul{
@@ -231,27 +221,31 @@ body{
     line-height:2;
 }
 
+/* ── BRAIN EMOJI — fixed overlap ── */
 .brain-image{
     position:absolute;
-    right:100px;
-    top:130px;
-
-    font-size:10rem;
+    right:24px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:8rem;           /* was 10rem — too large */
+    opacity:.9;
+    pointer-events:none;
+    user-select:none;
+    line-height:1;
 }
 
+
+/* ── ADAPTIVE CARD ── */
 .adaptive-card{
     height:auto;
+    width:100%;
 }
 
 .warning-box{
     padding:20px;
-
     border-radius:15px;
-
     background:rgba(255,166,0,.08);
-
     border:1px solid rgba(255,166,0,.3);
-
     margin:20px 0;
 }
 
@@ -267,68 +261,105 @@ body{
 
 .example-btn{
     width:100%;
-
     margin-top:30px;
-
     padding:16px;
-
     border:none;
-
     border-radius:12px;
-
-    background:linear-gradient(
-        90deg,
-        #9333ea,
-        #c084fc
-    );
-
+    background:linear-gradient(90deg,#9333ea,#c084fc);
     color:white;
-
     font-size:1rem;
-
     cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
 }
 
+.example-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 24px rgba(168,85,247,.4);
+}
+
+
+/* ── FOOTER TIP ── */
 .footer-tip{
     margin-top:20px;
     margin-bottom:20px;
     padding:15px;
-    font-size: 18px;
+    font-size:18px;
     border-radius:16px;
-
     background:#0d1327;
-
     border:1px solid rgba(168,85,247,.15);
-
     color:#c084fc;
 }
 
-.footer {
-  text-align: center;
-  color: rgb(166, 163, 163);
-  font-family: "Inter", sans-serif;
-  font-size: 12px;
+.footer{
+    text-align:center;
+    color:rgb(166,163,163);
+    font-family:'Inter',sans-serif;
+    font-size:12px;
 }
 
+
+/* ── RESPONSIVE ── */
 @media(max-width:1200px){
 
     .dashboard{
         grid-template-columns:1fr;
     }
 
-    .topic-card p,
+    /* Topic card goes single-column: let everything stack naturally */
+    .topic-card{
+        overflow:visible;
+    }
+
+    .topic-card h3{
+        width:100%;
+        font-size:1.6rem;
+    }
+
+    .topic-card > p,
     .topic-grid{
         width:100%;
     }
 
+    /* Brain drops out of absolute flow and sits below content */
     .brain-image{
         position:static;
+        display:block;
         text-align:center;
+        font-size:6rem;
         margin-top:30px;
+        transform:none;
+        opacity:1;
     }
 
     .adaptive-card{
         min-height:auto;
     }
+}
 
+@media(max-width:640px){
+
+    .logo-section h1{
+        font-size:2rem;
+    }
+
+    .card h2{
+        font-size:1.4rem;
+    }
+
+    .topic-card h3{
+        font-size:1.3rem;
+    }
+
+    .brain-image{
+        font-size:4.5rem;
+    }
+
+    .webcam-output{
+        height:280px;
+    }
+
+    .face-box{
+        width:160px;
+        height:160px;
+    }
 }
