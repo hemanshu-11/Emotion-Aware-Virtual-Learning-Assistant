@@ -52,7 +52,7 @@ See [`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md) for a detailed breakdown.
 
 ## 📸 Screenshots
 
-> Add screenshots of the dashboard here.
+<img width="1256" height="583" alt="image" src="https://github.com/user-attachments/assets/14855a69-efe4-4dd4-ab94-44634bda6b64" />
 
 ---
 
