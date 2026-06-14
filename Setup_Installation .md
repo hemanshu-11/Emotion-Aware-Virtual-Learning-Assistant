@@ -124,24 +124,6 @@ Emotion-Aware-Virtual-Learning-Assistant/
 
 ---
 
-## 🎭 Emotion States & Adaptive Modes
-
-The system maps detected emotions to adaptive UI modes and attention ranges:
-
-| Emotion | Adaptive Mode | Attention Range |
-|---|---|---|
-| 😊 Happy | normal | 70–90% |
-| 🎯 Focused | normal | 75–95% |
-| 😐 Neutral | normal | 50–70% |
-| 😲 Surprised | normal | 60–80% |
-| 😕 Confused | confused | 40–60% |
-| 😠 Angry | distracted | 30–55% |
-| 😨 Fearful | distracted | 35–60% |
-| 🤢 Disgusted | bored | 25–50% |
-| 😢 Sad | bored | 20–45% |
-
----
-
 ## ❓ Troubleshooting
 
 ### Webcam not detected?
