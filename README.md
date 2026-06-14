@@ -66,8 +66,13 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 👥 Authors
 Hemanshu M - hemanshu1947@gmail.com / hemanshu.25bai10608@vitbhopal.ac.in
+
 Divyansh Verma - divyanshv235@gmail.com
+
 Parth Chouhan - parthchouhan2007@gmail.com
+
 Shaan Agarwal - shaanagarwal391@gmail.com
-Adit Prasad - adit.25bce10115@vitbhopal.ac.in
+
+Adit Prasad - adit.25bce10115@vitbhopal.ac.
+
 **The Bug Busters** — © 2026
